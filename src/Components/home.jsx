@@ -17,11 +17,11 @@ const Home = () => {
         return savedData ? JSON.parse(savedData) : [];
     });
 
-    const API_KEY = 'dda29fe38e4bdff7ea9f9ab591030ca1';
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
     const fetchWeatherData = async () => {
         try {
-            const response = await axios.get(`http://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.latitude}&lon=${selectedCity.longitude}&units=metric&appid=${API_KEY}`);
+            const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.latitude}&lon=${selectedCity.longitude}&units=metric&appid=${API_KEY}`);
             const cityWeather = {
                 ...response.data,
                 city: selectedCity.city
