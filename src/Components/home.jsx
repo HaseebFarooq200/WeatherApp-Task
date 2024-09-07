@@ -17,7 +17,7 @@ const Home = () => {
         return savedData ? JSON.parse(savedData) : [];
     });
 
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+    const API_KEY = 'dda29fe38e4bdff7ea9f9ab591030ca1';
 
     const fetchWeatherData = async () => {
         try {
